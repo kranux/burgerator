@@ -2,19 +2,20 @@
     "use strict";
     $(function () {
         var $portion1 = $("#portion-1"),
-            $portion2 = $("#portion-2");
+            $portion2 = $("#portion-2"),
+            $totalPrice = $("#total-price-input");
 
         $("input").on('change', function () {
             var p1 = parseInt($portion1.val(), 10) || 1,
                 p2 = parseInt($portion2.val(), 10) || 1,
-                portions = p1 * p2;
-
+                portions = p1 * p2,
+                totalPrice = 0;
             $("input.amount-input").each(function () {
                 var $this = $(this),
                     product = $this.data('product'),
                     amount = parseFloat($this.val()) || 1,
-                    $totalAmountInput = $(".total-amount-input."+product),
-                    $priceInput = $("input.price-input."+product);
+                    $totalAmountInput = $(".total-amount-input." + product),
+                    $priceInput = $("input.price-input." + product);
 
                 if (!$this.siblings('input[type="checkbox"]').is(':checked')) {
                     $totalAmountInput.parents('li').hide();
@@ -22,10 +23,12 @@
                 }
                 var totalAmount = amount * portions,
                     multiplier = parseFloat($priceInput.data('multiplier')) || 1,
-                   productPrice = totalAmount * parseFloat($priceInput.val()) * multiplier;
+                    productPrice = totalAmount * parseFloat($priceInput.val()) * multiplier;
                 $totalAmountInput.text(totalAmount).parents('li').show();
-                $totalAmountInput.siblings('.total-price-input').text(productPrice);
+                $totalAmountInput.siblings('.total-price-input').text(productPrice.toFixed(2));
+                totalPrice +=  productPrice;
             });
+            $totalPrice.text(totalPrice.toFixed(2));
         });
     });
 })(jQuery, window);

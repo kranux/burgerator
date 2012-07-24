@@ -70,12 +70,12 @@
             </h4>
             <div class="form-row">
               <label class="name">Jautienos faršas:</label>
-              <input type="text" class="input-small amount-input stuffing" data-product="stuffing" value="100">
+              <input type="text" class="input-small amount-input" data-product="stuffing" value="100">
               <label class="el">gr.</label><input type="checkbox" checked="checked"/>
             </div>
             <div class="form-row">
               <label class="name">Sūrio produktas:</label>
-              <input type="text" class="input-small" value="1">
+              <input type="text" class="input-small amount-input" data-product="cheese" value="1">
               <label class="el">vnt.</label><input type="checkbox" checked="checked"/>
             </div>
             <div class="form-row">
@@ -118,7 +118,7 @@
             </div>
             <div class="form-row">
               <label class="name">Sūrio produktas (1):</label>
-              <input type="text" class="input-small" value="1">
+              <input type="text" class="input-small price-input cheese" value="1">
               <label>Lt.</label>
             </div>
             <div class="form-row">
@@ -165,11 +165,15 @@
                <li><input type="checkbox" /> <strong>Pomidorai:</strong> 4 vnt.</li>
                <li> <input type="checkbox" /> <strong>Salotos:</strong> 2 vnt.</li>
                <li><input type="checkbox" /> <strong>Svogūnų galvos:</strong> 3 vnt.</li>
-               <li><input type="checkbox" />
+               <li>
+                   <input type="checkbox" />
                    <strong>Jautienos faršas:</strong> <span class="total-amount-input stuffing">2000</span> gr.,
                    <span class="total-price-input stuffing">0</span> lt
                </li>
-               <li> <input type="checkbox" /> <strong>Sūrio produktas:</strong> 4 pak. (20 vnt.)</li>
+               <li>
+                   <input type="checkbox" /> <strong>Sūrio produktas:</strong> 4 pak. (<span class="total-amount-input cheese">20</span> vnt.),
+                   <span class="total-price-input stuffing">0</span> lt
+               </li>
                <li> <input type="checkbox" /> <strong>Majonezas:</strong> 400 gr.</li>
                <li><input type="checkbox" /> <strong>Marinuoti agurkai:</strong> 1 x 720 gr. (10 vnt.)</li>
                <li><br/></li>
@@ -177,7 +181,7 @@
                <li><input type="checkbox" /> <strong>Pipirai</strong> </li>
           </ul>
           <div class="well">
-            <h1>Kaina: ~56,78Lt</h1>
+            <h1>Kaina: ~<span id="total-price-input">56,78</span>Lt</h1>
           </div>
        </div>
         <div class="span4">
