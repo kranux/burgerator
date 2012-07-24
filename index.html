@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Hamburgenator</title>
+    <title>Burgerator</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -69,50 +69,50 @@
             </h4>
             <div class="form-row">
               <label class="name">Jautienos faršas:</label>
-              <input type="text" class="input-small" value="100">
-              <label class="el">gr.</label><input type="checkbox"/>
+              <input type="text" class="input-small amount-input stuffing" data-product="stuffing" value="100">
+              <label class="el">gr.</label><input type="checkbox" checked="checked"/>
             </div>
             <div class="form-row">
               <label class="name">Sūrio produktas:</label>
               <input type="text" class="input-small" value="1">
-              <label class="el">vnt.</label><input type="checkbox"/>
+              <label class="el">vnt.</label><input type="checkbox" checked="checked"/>
             </div>
             <div class="form-row">
               <label class="name">Bandelės:</label>
               <input type="text" class="input-small" value="1">
-              <label class="el">vnt.</label><input type="checkbox"/>
+              <label class="el">vnt.</label><input type="checkbox" checked="checked"/>
             </div>
             <div class="form-row">
               <label class="name">Pomidorai:</label>
               <input type="text" class="input-small" value="0,17">
-              <label class="el">vnt.</label><input type="checkbox"/>
+              <label class="el">vnt.</label><input type="checkbox" checked="checked"/>
             </div>
             <div class="form-row">
               <label class="name">Marinuotas agurkas:</label>
               <input type="text" class="input-small" value="0,17">
-              <label class="el">vnt.</label><input type="checkbox"/>
+              <label class="el">vnt.</label><input type="checkbox" checked="checked"/>
             </div>
             <div class="form-row">
               <label class="name">Svogūnų galvos:</label>
               <input type="text" class="input-small" value="0,05">
-              <label class="el">vnt.</label><input type="checkbox"/>
+              <label class="el">vnt.</label><input type="checkbox" checked="checked"/>
             </div>
             <div class="form-row">
               <label class="name">Salotos:</label>
               <input type="text" class="input-small" value="1">
-              <label class="el">vnt.</label><input type="checkbox"/>
+              <label class="el">vnt.</label><input type="checkbox" checked="checked"/>
             </div>
             <div class="form-row">
               <label class="name">Majonezas:</label>
               <input type="text" class="input-small" value="10">
-              <label class="el">gr.</label><input type="checkbox"/>
+              <label class="el">gr.</label><input type="checkbox" checked="checked"/>
             </div>
           <h4>
             Vidutinė kaina:
           </h4>
             <div class="form-row">
               <label class="name">Jautienos faršas (1kg):</label>
-              <input type="text" class="input-small" value="17">
+              <input type="text" class="input-small price-input stuffing" value="17" data-multiplier="0.001">
               <label>Lt.</label>
             </div>
             <div class="form-row">
@@ -153,25 +153,28 @@
           </form>
         </div>
         <div class="span4">
-          <form class="well">
+          <div class="well">
             <label class="name">Žmonių skaičius:</label>
-            <input type="text" class="input-small" value="10">
+            <input type="number" class="input-small" value="10" id="portion-1" step="1">
             <label class="name">Hamburgerių 1 žmogui:</label>
-            <input type="text" class="input-small" value="2">
-            <button type="submit" class="btn btn-large btn-success">Kiek visko reiks ir kiek gali kainuoti?</button>
-          </form>
-           <div class="well total-prods" style="font-size: 16px; line-height: 24px;">
-            <input type="checkbox" /> <strong>Bandelės:</strong> 4 pak. (20 vnt.)<br/>
-            <input type="checkbox" /> <strong>Pomidorai:</strong> 4 vnt.<br/>
-            <input type="checkbox" /> <strong>Salotos:</strong> 2 vnt.<br/>
-            <input type="checkbox" /> <strong>Svogūnų galvos:</strong> 3 vnt.<br/>
-            <input type="checkbox" /> <strong>Jautienos faršas:</strong> 2000 gr.<br/>
-            <input type="checkbox" /> <strong>Sūrio produktas:</strong> 4 pak. (20 vnt.)<br/>
-            <input type="checkbox" /> <strong>Majonezas:</strong> 400 gr.<br/>
-            <input type="checkbox" /> <strong>Marinuoti agurkai:</strong> 1 x 720 gr. (10 vnt.)<br/><br/>
-            <input type="checkbox" /> <strong>Druska</strong><br/>
-            <input type="checkbox" /> <strong>Pipirai</strong>
+            <input type="number" class="input-small" value="2" id="portion-2" step="1">
           </div>
+           <ul class="well total-prods" style="font-size: 16px; line-height: 24px;">
+            <li><input type="checkbox" /> <strong>Bandelės:</strong> 4 pak. (20 vnt.)</li>
+               <li><input type="checkbox" /> <strong>Pomidorai:</strong> 4 vnt.</li>
+               <li> <input type="checkbox" /> <strong>Salotos:</strong> 2 vnt.</li>
+               <li><input type="checkbox" /> <strong>Svogūnų galvos:</strong> 3 vnt.</li>
+               <li><input type="checkbox" />
+                   <strong>Jautienos faršas:</strong> <span class="total-amount-input stuffing">2000</span> gr.,
+                   <span class="total-price-input stuffing">0</span> lt
+               </li>
+               <li> <input type="checkbox" /> <strong>Sūrio produktas:</strong> 4 pak. (20 vnt.)</li>
+               <li> <input type="checkbox" /> <strong>Majonezas:</strong> 400 gr.</li>
+               <li><input type="checkbox" /> <strong>Marinuoti agurkai:</strong> 1 x 720 gr. (10 vnt.)</li>
+               <li><br/></li>
+               <li> <input type="checkbox" /> <strong>Druska</strong></li>
+               <li><input type="checkbox" /> <strong>Pipirai</strong> </li>
+          </ul>
           <div class="well">
             <h1>Kaina: ~56,78Lt</h1>
           </div>
@@ -200,19 +203,9 @@
     <!-- Le javascript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="js/jquery.js"></script>
-    <script src="js/bootstrap-transition.js"></script>
-    <script src="js/bootstrap-alert.js"></script>
-    <script src="js/bootstrap-modal.js"></script>
-    <script src="js/bootstrap-dropdown.js"></script>
-    <script src="js/bootstrap-scrollspy.js"></script>
-    <script src="js/bootstrap-tab.js"></script>
-    <script src="js/bootstrap-tooltip.js"></script>
-    <script src="js/bootstrap-popover.js"></script>
-    <script src="js/bootstrap-button.js"></script>
-    <script src="js/bootstrap-collapse.js"></script>
-    <script src="js/bootstrap-carousel.js"></script>
-    <script src="js/bootstrap-typeahead.js"></script>
+
+    <script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+    <script src="js/scripts.js"></script>
 
   </body>
 </html>
