@@ -2,13 +2,10 @@
     "use strict";
     $(function () {
         var $portion1 = $("#portion-1"),
-            $portion2 = $("#portion-2"),
             $totalPrice = $("#total-price-input");
 
         function recalculate() {
-            var p1 = parseInt($portion1.val(), 10) || 1,
-                p2 = parseInt($portion2.val(), 10) || 1,
-                portions = p1 * p2,
+            var portions = parseInt($portion1.val(), 10) || 1,
                 totalPrice = 0;
             $("input.amount-input").each(function () {
                 var $this = $(this),
